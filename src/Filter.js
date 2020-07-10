@@ -31,7 +31,10 @@ const people = [
   }
 ];
 
-class Geanina extends Component{
+const filterpersons = people.filter(individ => individ.age<65).map(filteredperson => 
+  (filteredperson.name))
+
+class Filter extends Component{
   
 
 onClickFilter(){
@@ -44,20 +47,53 @@ onClickPersons(){
   console.log(people.filter(individ => individ.age<65))
 }
 
+isNumberPrime(){
+  let result; 
+  const a = 13;
+  for (let i = 2; i < Math.sqrt(a); i++){
+    if (a % i ===0){
+      result = 'Not prime'; 
+    } 
+  }
+  if (!result) {
+    result = 'Number is prime.'; 
+  }
+  console.log(result);
+}
+
+isPalindrom(){
+  let result; 
+  const a = 1221; 
+  let nr = a; 
+  let ogl = 0; 
+  do {
+    ogl = (ogl * 10) + (nr % 10);
+    nr = nr % 10; 
+
+  } while (nr != 0); 
+
+  console.log(nr);
+  console.log(ogl);
+
+  if (a === ogl){
+   console.log('palindrom'); 
+  } else {
+  console.log(' not palindrom'); 
+  }
+  
+
+}
 
  render(){
    return (
      <div>
        <Button onClick={this.onClickFilter}>Filter Marvel</Button>
        <Button onClick={this.onClickPersons}>Filter Persons</Button>
-      <div>
-      {people.filter(individ => individ.age<65).map(filteredperson => 
-        (<li>{filteredperson.name}</li>))}
-      </div>
-
+       <Button onClick={this.isNumberPrime}>Prime</Button>
+       <Button onClick={this.isPalindrom}>Palindrom</Button>
      </div>
    )
  }
 }
 
-export default Geanina;
+export default Filter;

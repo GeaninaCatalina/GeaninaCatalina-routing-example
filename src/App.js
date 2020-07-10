@@ -1,6 +1,6 @@
 import React, { Suspense, Component }from 'react';
 import './App.css';
-import Geanina from './Geanina';
+import Filter from './Filter';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -12,7 +12,8 @@ class App extends Component {
           <Router>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route exact path="/geanina" component={Geanina}/>
+                <Route exact path="/" component={Filter}/>
+                
               </Switch>
             </Suspense>
           </Router>
