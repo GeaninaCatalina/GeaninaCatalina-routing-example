@@ -62,15 +62,15 @@ isNumberPrime(){
 }
 
 isPalindrom(){
-  let result; 
   const a = 1221; 
   let nr = a; 
   let ogl = 0; 
   do {
-    ogl = (ogl * 10) + (nr % 10);
-    nr = nr % 10; 
-
-  } while (nr != 0); 
+    ogl = ogl * 10 + Math.trunc(nr % 10);
+    nr = Math.trunc(nr/10); 
+      console.log('oglindit');
+      console.log(ogl);
+  } while (nr > 0); 
 
   console.log(nr);
   console.log(ogl);
