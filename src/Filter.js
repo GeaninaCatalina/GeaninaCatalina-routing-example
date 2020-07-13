@@ -84,6 +84,25 @@ isPalindrom(){
 
 }
 
+
+bubbleFunctionAsc = (array) => {
+  let length = array.length; 
+  let swapped; 
+  let max = 0; 
+  do{
+    swapped = false; 
+    for (let i = 0; i < length; i++){
+      if (array[i] > array[i +1]) {
+        max = array[i]; 
+        array[i] = array[i + 1]; 
+        array[i + 1] = max; 
+        swapped = true;  
+      }
+    }
+  } while (swapped); 
+  return array.join(' '); 
+}  
+
  render(){
    return (
      <div>
